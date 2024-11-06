@@ -98,9 +98,9 @@ const ExperienceModal = ({ onClose }) => {
       }, [onClose]);
     
       return (
-        <div className="fixed inset-4 bg-white rounded-2xl shadow-2xl overflow-hidden">
-          {/* Modal header */}
-          <div className="sticky top-0 z-10 bg-white/80 backdrop-blur-sm border-b border-gray-100 px-8 py-4 flex justify-between items-center">
+        <div className="fixed inset-0 sm:inset-4 bg-white rounded-none sm:rounded-2xl shadow-2xl overflow-hidden">
+          {/* Modal header - adjusted padding */}
+          <div className="sticky top-0 z-10 bg-white/80 backdrop-blur-sm border-b border-gray-100 px-4 sm:px-8 py-4 flex justify-between items-center">
             <div className="text-sm font-medium text-gray-400">Resume</div>
             <button
               onClick={onClose}
@@ -109,45 +109,45 @@ const ExperienceModal = ({ onClose }) => {
               <X className="w-4 h-4 text-gray-400" />
             </button>
           </div>
-    
-          {/* Scrollable content */}
-          <div className="h-[calc(100%-4rem)] overflow-y-auto px-8 py-10">
+      
+          {/* Scrollable content - adjusted padding and added better mobile scroll handling */}
+          <div className="h-[calc(100%-4rem)] overflow-y-auto overscroll-contain px-4 sm:px-8 py-6 sm:py-10">
             <div className="max-w-4xl mx-auto">
-              {/* Header */}
-              <header className="mb-16">
+              {/* Header - improved mobile layout */}
+              <header className="mb-8 sm:mb-16">
                 <div className="space-y-2">
-                  <h1 className="text-3xl font-semibold tracking-tight text-gray-900">
+                  <h1 className="text-2xl sm:text-3xl font-semibold tracking-tight text-gray-900">
                     Elizabeth Brown
                   </h1>
-                  <div className="flex flex-wrap items-center gap-x-3 text-sm text-gray-500">
+                  <div className="flex flex-wrap items-center gap-2 sm:gap-x-3 text-sm text-gray-500">
                     <p>Hermosa Beach, CA</p>
-                    <div className="w-1 h-1 rounded-full bg-gray-300" />
+                    <div className="w-1 h-1 rounded-full bg-gray-300 hidden sm:block" />
                     <p>310-913-3479</p>
-                    <div className="w-1 h-1 rounded-full bg-gray-300" />
+                    <div className="w-1 h-1 rounded-full bg-gray-300 hidden sm:block" />
                     <p>elizabethcarolb@gmail.com</p>
                   </div>
                 </div>
               </header>
-    
-              {/* Professional Experience */}
-              <section className="mb-16">
-                <h2 className="text-xs font-semibold uppercase tracking-wider text-gray-500 mb-8">
+      
+              {/* Experience sections - adjusted spacing */}
+              <section className="mb-8 sm:mb-16">
+                <h2 className="text-xs font-semibold uppercase tracking-wider text-gray-500 mb-6 sm:mb-8">
                   Professional Experience
                 </h2>
-                <div className="space-y-12">
+                <div className="space-y-8 sm:space-y-12">
                   {experiences.map((exp, index) => (
                     <div key={index} className="group">
-                      <div className="flex justify-between items-start mb-4">
+                      <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-1 sm:gap-0 mb-4">
                         <div className="space-y-1">
                           <h3 className="text-lg font-medium text-gray-900">{exp.title}</h3>
                           <p className="text-sm font-medium text-blue-600">{exp.company}</p>
                         </div>
-                        <div className="text-right text-sm">
+                        <div className="text-sm sm:text-right">
                           <p className="text-gray-900">{exp.location}</p>
                           <p className="text-gray-500">{exp.period}</p>
                         </div>
                       </div>
-                      <ul className="space-y-3 text-[15px] leading-relaxed">
+                      <ul className="space-y-3 text-sm sm:text-[15px] leading-relaxed">
                         {exp.achievements.map((achievement, i) => (
                           <li key={i} className="text-gray-600 flex items-start gap-3 group-hover:text-gray-900 transition-colors duration-200">
                             <span className="text-blue-500/50 group-hover:text-blue-500 transition-colors duration-200">→</span>

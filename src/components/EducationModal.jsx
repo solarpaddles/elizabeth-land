@@ -3,20 +3,20 @@ import { X, BookOpen, Heart, Zap, Coffee, Award, Code, Sparkles } from 'lucide-r
 
 const BookCard = ({ book }) => (
   <div className="group bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden border border-gray-100">
-    <div className="flex gap-6 p-6">
-      <div className="flex-none w-36 h-48 overflow-hidden rounded-lg">
+    <div className="flex flex-col sm:flex-row gap-6 p-4 sm:p-6">
+      <div className="w-full sm:w-36 h-48 overflow-hidden rounded-lg">
         <img
           src={book.image}
           alt={book.title}
           className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-300"
         />
       </div>
-      <div className="flex-1 space-y-4">
+      <div className="flex-1 space-y-4 pt-4 sm:pt-0">
         <div>
           <h3 className="text-xl font-semibold text-gray-900">{book.title}</h3>
           <p className="text-sm text-gray-500">{book.author}</p>
         </div>
-        <p className="text-gray-600">{book.why}</p>
+        <p className="text-gray-600 text-sm sm:text-base">{book.why}</p>
         <div className="relative pl-6 border-l-2 border-blue-100 italic text-gray-500">
           <span className="absolute -left-4 -top-2 text-2xl text-blue-100">"</span>
           <p className="text-sm">{book.quote}</p>
@@ -27,12 +27,27 @@ const BookCard = ({ book }) => (
 );
 
 const HobbyCard = ({ hobby }) => (
-  <div className="bg-gray-50 rounded-xl p-6 hover:bg-gray-100 transition-all duration-300">
+  <div className="bg-gray-50 rounded-xl p-4 sm:p-6 hover:bg-gray-100 transition-all duration-300">
     <div className="flex items-center gap-4 mb-3">
       {hobby.icon}
       <h3 className="text-lg font-medium text-gray-900">{hobby.name}</h3>
     </div>
-    <p className="text-gray-600">{hobby.description}</p>
+    <p className="text-gray-600 text-sm sm:text-base">{hobby.description}</p>
+  </div>
+);
+
+const ArtCard = ({ image, prompt }) => (
+  <div className="group relative h-48 sm:h-auto rounded-xl overflow-hidden">
+    <img
+      src={image}
+      alt="AI Generated Art"
+      className="w-full h-full object-cover rounded-xl"
+    />
+    <div className="absolute bottom-0 left-0 right-0 p-3 sm:p-4 bg-gradient-to-t from-black/70 to-transparent rounded-b-xl opacity-0 group-hover:opacity-100 sm:transition-opacity sm:duration-300 touch-device:opacity-100">
+      <p className="text-white text-xs sm:text-sm line-clamp-3 sm:line-clamp-none">
+        Prompt: {prompt}
+      </p>
+    </div>
   </div>
 );
 

@@ -7,13 +7,28 @@ import EducationModal from './EducationModal';
 import SkillsModal from './SkillsModal';
 
 const PixelResumeLand = () => {
-  const [position, setPosition] = useState({ x: 50, y: 50 });
+  const [position, setPosition] = useState({ x: 50, y: 66 });
   const [activeSection, setActiveSection] = useState(null);
   const [nearbyIcon, setNearbyIcon] = useState(null);
   const [direction, setDirection] = useState('down');
   const [isMoving, setIsMoving] = useState(false);
   const [movementDirection, setMovementDirection] = useState(null);
   const [idle, setIdle] = useState(false);
+
+  useEffect(() => {
+    const setInitialPosition = () => {
+      const isMobile = window.innerWidth <= 768; // Standard mobile breakpoint
+      setPosition({ 
+        x: 50, 
+        y: isMobile ? 30 : 66 
+      });
+    };
+
+    setInitialPosition(); // Set on mount
+    window.addEventListener('resize', setInitialPosition); // Update on resize
+
+    return () => window.removeEventListener('resize', setInitialPosition);
+  }, []);
 
   const iconPositions = {
     about: { x: 85, y: 85 },      // Bottom right
@@ -261,24 +276,23 @@ const PixelResumeLand = () => {
           </div>
         );
       })}
-
       <CatSprite
         direction={idle ? 'idle' : direction}
         isMoving={isMoving}
+        idle={idle}  // Add this line
         style={{
           left: `${position.x}%`,
           top: `${position.y}%`
         }}
       />
-
       <ControlPanel />
       {activeSection && (
         <div
-          className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50"
+          className="fixed inset-0 bg-black bg-opacity-75 z-50 overflow-hidden touch-auto"  // added touch-auto
           onClick={() => setActiveSection(null)}
         >
           <div
-            className="relative w-full h-full"
+            className="h-full w-full overflow-auto overscroll-contain"  // added overflow classes
             onClick={e => e.stopPropagation()}
           >
             {activeSection === 'experience' ? (

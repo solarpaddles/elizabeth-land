@@ -2,43 +2,43 @@ import React from 'react';
 import { X, TrendingUp, BarChart2, Zap, Users, Calendar, Target, Mail, Award, Code, GitBranch } from 'lucide-react';
 
 const BrandCard = ({ brand }) => (
-  <div className="group bg-white rounded-2xl shadow-lg overflow-hidden mb-8">
+  <div className="group bg-white rounded-xl sm:rounded-2xl shadow-lg overflow-hidden mb-6 sm:mb-8">
     {/* Header with Logo */}
-    <div className="relative p-8 border-b border-gray-100">
+    <div className="relative p-4 sm:p-8 border-b border-gray-100">
       <img
         src={brand.logo}
         alt={`${brand.company} logo`}
-        className="w-20 h-20 rounded-xl object-cover shadow-sm"
+        className="w-16 h-16 sm:w-20 sm:h-20 rounded-xl object-cover shadow-sm"
       />
     </div>
 
     {/* Main Content Section */}
-    <div className="p-8">
-      <div className="flex flex-col md:flex-row gap-8">
+    <div className="p-4 sm:p-8">
+      <div className="flex flex-col gap-4 sm:gap-8">
         {/* Description Section */}
-        <div className="flex-1 border border-gray-100 rounded-xl p-6">
-          <h3 className="text-xl font-semibold text-gray-900 mb-2">{brand.company}</h3>
-          <p className="text-gray-600 text-lg">
+        <div className="border border-gray-100 rounded-xl p-4 sm:p-6">
+          <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2">{brand.company}</h3>
+          <p className="text-gray-600 text-sm sm:text-lg">
             {brand.description}
           </p>
         </div>
 
         {/* Stats Section */}
-        <div className="flex-1 border border-gray-100 rounded-xl p-6">
-          <div className="grid gap-4">
+        <div className="border border-gray-100 rounded-xl p-4 sm:p-6">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
             {brand.achievements.map((achievement, index) => (
               <div
                 key={index}
-                className="flex items-center gap-4 p-4 bg-gray-50 rounded-lg hover:shadow-sm transition-all duration-300"
+                className="flex items-center gap-3 p-3 sm:p-4 bg-gray-50 rounded-lg hover:shadow-sm transition-all duration-300"
               >
                 <div className="p-2 rounded-lg bg-white shadow-sm">
                   {achievement.icon}
                 </div>
                 <div>
-                  <span className="text-xl font-bold text-gray-900 block">
+                  <span className="text-lg sm:text-xl font-bold text-gray-900 block">
                     {achievement.stat}
                   </span>
-                  <span className="text-sm text-gray-600">
+                  <span className="text-xs sm:text-sm text-gray-600">
                     {achievement.label}
                   </span>
                 </div>
@@ -50,12 +50,12 @@ const BrandCard = ({ brand }) => (
     </div>
 
     {/* Gallery Section */}
-    <div className="px-8 pb-8">
-      <div className="flex gap-4 overflow-x-auto pb-4 scrollbar-hide">
+    <div className="px-4 sm:px-8 pb-4 sm:pb-8">
+      <div className="flex gap-3 sm:gap-4 overflow-x-auto pb-4 scrollbar-hide -mx-4 px-4 sm:mx-0 sm:px-0">
         {brand.gallery.map((image, i) => (
           <div
             key={i}
-            className="flex-none w-72 aspect-video rounded-lg overflow-hidden hover:opacity-90 transition-opacity"
+            className="flex-none w-60 sm:w-72 aspect-video rounded-lg overflow-hidden hover:opacity-90 transition-opacity"
           >
             <img
               src={image.src}
@@ -70,6 +70,7 @@ const BrandCard = ({ brand }) => (
 );
 
 const SkillsModal = ({ onClose }) => {
+
   const brandShowcase = [
     {
       company: "7Diamonds",
@@ -290,8 +291,8 @@ const SkillsModal = ({ onClose }) => {
   }, [onClose]);
 
   return (
-    <div className="fixed inset-4 bg-gray-50 rounded-2xl shadow-2xl overflow-hidden">
-      <div className="sticky top-0 z-10 bg-white/80 backdrop-blur-sm border-b border-gray-100 px-8 py-4 flex justify-between items-center">
+    <div className="fixed inset-0 sm:inset-4 bg-gray-50 rounded-none sm:rounded-2xl shadow-2xl overflow-hidden">
+      <div className="sticky top-0 z-10 bg-white/80 backdrop-blur-sm border-b border-gray-100 px-4 sm:px-8 py-4 flex justify-between items-center">
         <div className="text-sm font-medium text-gray-400">Skills & Experience</div>
         <button
           onClick={onClose}
@@ -301,18 +302,18 @@ const SkillsModal = ({ onClose }) => {
         </button>
       </div>
 
-      <div className="h-[calc(100%-4rem)] overflow-y-auto px-8 py-10">
+      <div className="h-[calc(100%-4rem)] overflow-y-auto overscroll-contain px-4 sm:px-8 py-6 sm:py-10">
         <div className="max-w-6xl mx-auto">
-          <header className="mb-16 text-center">
-            <h1 className="text-4xl font-semibold tracking-tight text-gray-900 mb-4">
+          <header className="mb-8 sm:mb-16 text-center">
+            <h1 className="text-2xl sm:text-4xl font-semibold tracking-tight text-gray-900 mb-3 sm:mb-4">
               Technical Skills Through Brand Work
             </h1>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto px-4">
               A closer look at how brand work comes to life through different technologies and platforms.
             </p>
           </header>
 
-          <div className="space-y-8">
+          <div className="space-y-6 sm:space-y-8">
             {brandShowcase.map((brand, index) => (
               <BrandCard key={index} brand={brand} />
             ))}
