@@ -1,5 +1,5 @@
 import React from 'react';
-import { X, TrendingUp, BarChart2, Zap, Users, Calendar, Target, Mail, Award } from 'lucide-react';
+import { X, TrendingUp, BarChart2, Zap, Users, Calendar, Target, Mail, Award, Code, GitBranch } from 'lucide-react';
 
 const BrandCard = ({ brand }) => (
   <div className="group bg-white rounded-2xl shadow-lg overflow-hidden mb-8">
@@ -78,8 +78,8 @@ const SkillsModal = ({ onClose }) => {
       achievements: [
         {
           icon: <Users className="w-5 h-5 text-blue-500" />,
-          stat: "35%",
-          label: "LTV Increase"
+          stat: "233%",
+          label: "Avg Campaign Increase"
         },
         {
           icon: <BarChart2 className="w-5 h-5 text-emerald-500" />,
@@ -88,8 +88,8 @@ const SkillsModal = ({ onClose }) => {
         },
         {
           icon: <Calendar className="w-5 h-5 text-amber-500" />,
-          stat: "2.5mo",
-          label: "Extended Retention"
+          stat: "2 week",
+          label: "Content Sprint Planning"
         }
       ],
       gallery: [
@@ -114,7 +114,7 @@ const SkillsModal = ({ onClose }) => {
     {
       company: "Ghost Golf",
       logo: "/brands/GhostGolf_Logo.jpg",
-      description: "Scaled advertising technology solutions and managed partnerships with major automotive industry players, driving significant revenue growth and platform adoption while improving operational efficiency.",
+      description: "Pioneered our segmenting and promotional process to move away from discount messaging and increase revenue by curating educational content that inspired full price purchases.",
       achievements: [
         {
           icon: <TrendingUp className="w-5 h-5 text-emerald-500" />,
@@ -154,22 +154,27 @@ const SkillsModal = ({ onClose }) => {
     {
       company: "Bracketsync",
       logo: "/brands/bracketsync_logo.jpg",
-      description: "Founded and scaled the first female-led beach tennis brand, pioneering innovative product development and establishing industry-leading standards for equity in sports equipment manufacturing.",
+      description: "Self-taught full-stack developer who mastered TypeScript and Vue.js, leveraging AI to architect and engineer a comprehensive tournament management platform. Wearing multiple hats as lead engineer, product manager, and marketing strategist while actively running tournaments to deeply understand user needs.",
       achievements: [
         {
-          icon: <Award className="w-5 h-5 text-amber-500" />,
-          stat: "#1",
-          label: "Female Founder in Industry"
+          icon: <Code className="w-5 h-5 text-emerald-500" />,
+          stat: "2K+",
+          label: "Events Processed"
         },
         {
-          icon: <Target className="w-5 h-5 text-purple-500" />,
-          stat: "1st",
-          label: "USAP Approved Brand"
+          icon: <GitBranch className="w-5 h-5 text-blue-500" />,
+          stat: "v1.0",
+          label: "Rating Algorithm"
         },
+        // {
+        //   icon: <Users className="w-5 h-5 text-purple-500" />,
+        //   stat: "700+",
+        //   label: "Active Players"
+        // },
         {
-          icon: <Users className="w-5 h-5 text-blue-500" />,
-          stat: "50/50",
-          label: "Gender Pay Equity"
+          icon: <Zap className="w-5 h-5 text-amber-500" />,
+          stat: "3 button click",
+          label: "Bracket Generation"
         }
       ],
       gallery: [
@@ -192,24 +197,65 @@ const SkillsModal = ({ onClose }) => {
       ]
     },
     {
-      company: "DryWater",
-      logo: "/brands/drywater_logo.jpeg",
-      description: "Led cross-functional teams to develop and execute comprehensive marketing strategies across multiple channels, focusing on driving growth and improving operational efficiency through innovative automation and strategic planning.",
+      company: "Solar Paddles",
+      logo: "/brands/solar_logo.jpg",
+      background: "/brand_background.jpg",
+      description: "Custom manufacturing of a beach tennis paddle line, including carbon fiber composition, EVA foam density, weight + balance. Established strategic international distribution in Brazil, Italy, and Puerto Rico. Built a marketing strategy based on an equitable pro athlete program.",
       achievements: [
         {
-          icon: <TrendingUp className="w-5 h-5 text-emerald-500" />,
-          stat: "80%",
-          label: "YoY Revenue Growth"
-        },
-        {
-          icon: <Mail className="w-5 h-5 text-blue-500" />,
-          stat: "2.5M",
-          label: "Emails Automated"
+          icon: <Zap className="w-5 h-5 text-amber-500" />,
+          stat: "#1",
+          label: "First Female Founder in Industry",
         },
         {
           icon: <Target className="w-5 h-5 text-purple-500" />,
-          stat: "$419K",
-          label: "SMS Revenue"
+          stat: "1st",
+          label: "USAP Approved Beach Tennis Brand",
+        },
+        {
+          icon: <Users className="w-5 h-5 text-blue-500" />,
+          stat: "50/50",
+          label: "Gender Pay Equity Achievement",
+        }
+      ],
+      gallery: [
+        {
+          src: "/brands/solar_04.jpg",
+          alt: "Product Lineup"
+        },
+        {
+          src: "/brands/solar_01.jpg",
+          alt: "Manufacturing Process"
+        },
+        {
+          src: "/brands/solar_03.jpg",
+          alt: "Sponsored Athletes"
+        },
+        {
+          src: "/brands/solar_02.jpg",
+          alt: "Tournament Coverage"
+        }
+      ]
+    },
+    {
+      company: "DryWater",
+      logo: "/brands/drywater_logo.jpeg",
+      description: "Brought formalized design process to streamline retention program assets. Worked to develop baseline stats for LTV goals + retention.",
+      achievements: [
+        {
+          icon: <TrendingUp className="w-5 h-5 text-emerald-500" />,
+          stat: "30%",
+          label: "Efficiency in Design"
+        },
+        {
+          icon: <Mail className="w-5 h-5 text-blue-500" />,
+          stat: "15%",
+          label: "Increase in Rev/Rec"
+        },
+        {
+          icon: <Target className="w-5 h-5 text-purple-500" />,
+          stat: "Educational",
+          label: "Content focus shift"
         }
       ],
       gallery: [
@@ -262,7 +308,7 @@ const SkillsModal = ({ onClose }) => {
               Technical Skills Through Brand Work
             </h1>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              A showcase of projects and achievements across different technologies and platforms.
+              A closer look at how brand work comes to life through different technologies and platforms.
             </p>
           </header>
 
