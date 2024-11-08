@@ -110,18 +110,22 @@ const EducationModal = ({ onClose }) => {
   }, [onClose]);
 
   return (
-    <div className="fixed inset-4 bg-gray-50 rounded-2xl shadow-2xl overflow-hidden">
-      <div className="sticky top-0 z-10 bg-white/80 backdrop-blur-sm border-b border-gray-100 px-8 py-4 flex justify-between items-center">
+    <div className="fixed inset-0 sm:inset-4 bg-gray-50 rounded-none sm:rounded-2xl shadow-2xl 
+                    overflow-hidden touch-auto">
+      <div className="sticky top-0 z-10 bg-white/80 backdrop-blur-sm border-b border-gray-100 
+                      px-4 sm:px-8 py-4 flex justify-between items-center">
         <div className="text-sm font-medium text-gray-400">Beyond Work</div>
         <button
           onClick={onClose}
-          className="w-8 h-8 rounded-full bg-gray-50 flex items-center justify-center hover:bg-gray-100 transition-colors"
+          className="w-8 h-8 rounded-full bg-gray-50 flex items-center justify-center 
+                     hover:bg-gray-100 transition-colors"
         >
           <X className="w-4 h-4 text-gray-400" />
         </button>
       </div>
 
-      <div className="h-[calc(100%-4rem)] overflow-y-auto px-8 py-10">
+      <div className="h-[calc(100%-4rem)] overflow-y-auto overscroll-contain 
+                      px-4 sm:px-8 py-6 sm:py-10 -webkit-overflow-scrolling-touch">
         <div className="max-w-4xl mx-auto">
           {/* Reading Section */}
           <section className="mb-16">

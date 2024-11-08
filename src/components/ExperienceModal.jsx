@@ -31,18 +31,6 @@ const ExperienceModal = ({ onClose }) => {
             ]
         },
         {
-            title: "Co-Owner",
-            company: "Yams Media",
-            location: "Los Angeles, CA",
-            period: "Oct 2018 - Jun 2021",
-            achievements: [
-                "Focused on collaborating with women-owned and environmentally friendly brands; successfully launched and managed branding, website building, and email marketing for 15 clients.",
-                "Led the development of strong visual identities, establishing distinct voice and tone guidelines",
-                "Mastered and employed a comprehensive suite of digital advertising tools, including Google Analytics, AdWords",
-                "Implemented innovative branding strategies that aligned with client values and market demands"
-            ]
-        },
-        {
             title: "Product Manager",
             company: "Dealer.com",
             location: "Burlington, VT",
@@ -60,21 +48,8 @@ const ExperienceModal = ({ onClose }) => {
 
     const entrepreneurial = [
         {
-            title: "Founder",
-            company: "Solar Paddles",
-            location: "Los Angeles, CA",
-            period: "2020-present",
-            achievements: [
-                "Pioneered as the first female founder in the beach tennis industry",
-                "Conducted extensive quality testing with multiple manufacturers",
-                "Launched equitable athlete programs for men and women based on rankings",
-                "Developed wholesale and academy programs to facilitate offline sales",
-                "Became the first beach tennis brand to become a USA Pickleball approved manufacturer"
-            ]
-        },
-        {
             title: "Co-Founder",
-            company: "Metapaddles",
+            company: "Bracketsync",
             location: "Los Angeles, CA",
             period: "2023-present",
             achievements: [
@@ -84,7 +59,32 @@ const ExperienceModal = ({ onClose }) => {
                 "Collaborating closely with event organizers to conduct real-life user testing",
                 "Developing and refining an automated email marketing strategy"
             ]
-        }
+        },
+        {
+          title: "Founder",
+          company: "Solar Paddles",
+          location: "Los Angeles, CA",
+          period: "2020-present",
+          achievements: [
+              "Pioneered as the first female founder in the beach tennis industry",
+              "Conducted extensive quality testing with multiple manufacturers",
+              "Launched equitable athlete programs for men and women based on rankings",
+              "Developed wholesale and academy programs to facilitate offline sales",
+              "Became the first beach tennis brand to become a USA Pickleball approved manufacturer"
+          ]
+      },
+        {
+          title: "Co-Founder",
+          company: "Yams Media",
+          location: "Los Angeles, CA",
+          period: "Oct 2018 - Jun 2021",
+          achievements: [
+              "Focused on collaborating with women-owned and environmentally friendly brands; successfully launched and managed branding, website building, and email marketing for 15 clients.",
+              "Led the development of strong visual identities, establishing distinct voice and tone guidelines",
+              "Mastered and employed a comprehensive suite of digital advertising tools, including Google Analytics, AdWords",
+              "Implemented innovative branding strategies that aligned with client values and market demands"
+          ]
+      },
     ];
 
     React.useEffect(() => {
@@ -201,7 +201,7 @@ const ExperienceModal = ({ onClose }) => {
                     <h3 className="text-lg font-medium text-gray-900">Bachelor of Science in Business Administration</h3>
                     <p className="text-sm font-medium text-blue-600">University of Vermont | Burlington, VT</p>
                     <p className="text-[15px] text-gray-600 mt-2">Information Systems + Environmental Business | Minor in Mandarin</p>
-                    <p className="text-sm text-gray-500">GPA: 3.7</p>
+                    <p className="text-sm text-gray-500">GPA: 3.6</p>
                   </div>
                 </div>
               </section>

@@ -18,9 +18,9 @@ const PixelResumeLand = () => {
   useEffect(() => {
     const setInitialPosition = () => {
       const isMobile = window.innerWidth <= 768; // Standard mobile breakpoint
-      setPosition({ 
-        x: 50, 
-        y: isMobile ? 30 : 66 
+      setPosition({
+        x: 50,
+        y: isMobile ? 35 : 66
       });
     };
 
@@ -90,13 +90,13 @@ const PixelResumeLand = () => {
   }, [isMoving]);
 
   const ControlPanel = () => (
-    <div className="fixed bottom-0 left-0 z-40 p-4 flex flex-col items-start">
-      <div className="bg-black bg-opacity-75 rounded-xl p-4 shadow-lg backdrop-blur-sm">
-        <div className="flex flex-col gap-2">
+    <div className="fixed bottom-0 left-0 z-40 p-2 sm:p-4 flex flex-col items-start">
+      <div className="bg-black bg-opacity-75 rounded-xl p-3 sm:p-4 shadow-lg backdrop-blur-sm">
+        <div className="flex flex-col gap-1.5 sm:gap-2">
           <div className="flex justify-center">
             <button
-              className="w-12 h-12 bg-white bg-opacity-20 hover:bg-opacity-30 text-white rounded-lg 
-                        flex items-center justify-center font-bold text-xl
+              className="w-8 h-8 sm:w-12 sm:h-12 bg-white bg-opacity-20 hover:bg-opacity-30 text-white rounded-lg 
+                        flex items-center justify-center font-bold text-base sm:text-xl
                         active:transform active:scale-95 transition-all duration-150"
               onMouseDown={() => handleMove('w')}
               onTouchStart={() => handleMove('w')}
@@ -107,10 +107,10 @@ const PixelResumeLand = () => {
             </button>
           </div>
 
-          <div className="flex gap-2 justify-center">
+          <div className="flex gap-1.5 sm:gap-2 justify-center">
             <button
-              className="w-12 h-12 bg-white bg-opacity-20 hover:bg-opacity-30 text-white rounded-lg
-                        flex items-center justify-center font-bold text-xl
+              className="w-8 h-8 sm:w-12 sm:h-12 bg-white bg-opacity-20 hover:bg-opacity-30 text-white rounded-lg
+                        flex items-center justify-center font-bold text-base sm:text-xl
                         active:transform active:scale-95 transition-all duration-150"
               onMouseDown={() => handleMove('a')}
               onTouchStart={() => handleMove('a')}
@@ -120,8 +120,8 @@ const PixelResumeLand = () => {
               A
             </button>
             <button
-              className="w-12 h-12 bg-white bg-opacity-20 hover:bg-opacity-30 text-white rounded-lg
-                        flex items-center justify-center font-bold text-xl
+              className="w-8 h-8 sm:w-12 sm:h-12 bg-white bg-opacity-20 hover:bg-opacity-30 text-white rounded-lg
+                        flex items-center justify-center font-bold text-base sm:text-xl
                         active:transform active:scale-95 transition-all duration-150"
               onMouseDown={() => handleMove('s')}
               onTouchStart={() => handleMove('s')}
@@ -131,8 +131,8 @@ const PixelResumeLand = () => {
               S
             </button>
             <button
-              className="w-12 h-12 bg-white bg-opacity-20 hover:bg-opacity-30 text-white rounded-lg
-                        flex items-center justify-center font-bold text-xl
+              className="w-8 h-8 sm:w-12 sm:h-12 bg-white bg-opacity-20 hover:bg-opacity-30 text-white rounded-lg
+                        flex items-center justify-center font-bold text-base sm:text-xl
                         active:transform active:scale-95 transition-all duration-150"
               onMouseDown={() => handleMove('d')}
               onTouchStart={() => handleMove('d')}
@@ -144,8 +144,8 @@ const PixelResumeLand = () => {
           </div>
 
           <button
-            className="mt-2 px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-lg
-                      flex items-center justify-center font-bold shadow-lg
+            className="mt-1.5 sm:mt-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-lg
+                      flex items-center justify-center font-bold text-sm sm:text-base shadow-lg
                       active:transform active:scale-95 transition-all duration-150"
             onClick={() => {
               if (activeSection) {
@@ -159,7 +159,7 @@ const PixelResumeLand = () => {
           </button>
         </div>
 
-        <div className="mt-4 text-white text-sm space-y-1">
+        <div className="mt-3 sm:mt-4 text-white text-xs sm:text-sm space-y-0.5 sm:space-y-1">
           <p className="font-medium">Use controls to explore the village</p>
           <p className="text-white text-opacity-80">Visit each location to learn more</p>
           <p className="text-white text-opacity-80">Press ENTER when near a location</p>
@@ -235,6 +235,26 @@ const PixelResumeLand = () => {
         className="absolute inset-0 w-full h-full object-cover"
         alt="Village background"
       />
+      {/* New Header Section */}
+      <div
+        className="absolute top-0 left-0 w-full h-2/3 
+             bg-gradient-to-br from-black/70 via-black/40 via-black/20 via-black/5 to-transparent z-20"
+      />
+      {/* Then update the header section */}
+      <div className="absolute top-4 sm:top-20 left-4 sm:left-20 z-30 max-w-[280px] sm:max-w-md">
+        <h1
+          className="text-3xl sm:text-5xl mb-1 sm:mb-2 text-white drop-shadow-lg"
+          style={{ fontFamily: 'GintoBlack' }}
+        >
+          Welcome to Elizabeth Land
+        </h1>
+        <p
+          className="text-sm sm:text-[16px] text-white/90 leading-snug drop-shadow-md"
+          style={{ fontFamily: 'HubotSans' }}
+        >
+          Navigate through a curated journey of marketing innovation and brand strategy.
+        </p>
+      </div>
 
       {Object.entries(iconPositions).map(([section, pos]) => {
         const Icon = {
@@ -249,7 +269,7 @@ const PixelResumeLand = () => {
         return (
           <div
             key={section}
-            className="absolute z-10"
+            className="absolute z-30" // Updated z-index to be above background but below modal
             style={{ left: `${pos.x}%`, top: `${pos.y}%`, transform: 'translate(-50%, -50%)' }}
           >
             <div
@@ -257,7 +277,7 @@ const PixelResumeLand = () => {
                 ? 'bg-white bg-opacity-90 scale-105'
                 : 'bg-white bg-opacity-75 hover:bg-opacity-90'
                 }`}
-              onClick={() => setActiveSection(section)}  // Simply open the modal on click
+              onClick={() => setActiveSection(section)}
             >
               <Icon
                 size={24}
@@ -266,9 +286,9 @@ const PixelResumeLand = () => {
               />
               {isNearIcon && !activeSection && (
                 <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 
-                        text-sm font-medium whitespace-nowrap 
-                        bg-black bg-opacity-75 text-white
-                        px-3 py-1.5 rounded-full shadow-lg">
+                  text-sm font-medium whitespace-nowrap 
+                  bg-black bg-opacity-75 text-white
+                  px-3 py-1.5 rounded-full shadow-lg">
                   Press Enter
                 </div>
               )}
@@ -287,26 +307,29 @@ const PixelResumeLand = () => {
       />
       <ControlPanel />
       {activeSection && (
-        <div
-          className="fixed inset-0 bg-black bg-opacity-75 z-50 overflow-hidden touch-auto"  // added touch-auto
-          onClick={() => setActiveSection(null)}
-        >
-          <div
-            className="h-full w-full overflow-auto overscroll-contain"  // added overflow classes
-            onClick={e => e.stopPropagation()}
-          >
-            {activeSection === 'experience' ? (
-              <ExperienceModal onClose={() => setActiveSection(null)} />
-            ) : activeSection === 'about' ? (
-              <AboutModal onClose={() => setActiveSection(null)} />
-            ) : activeSection === 'education' ? (
-              <EducationModal onClose={() => setActiveSection(null)} />
-            ) : activeSection === 'skills' ? (
-              <SkillsModal onClose={() => setActiveSection(null)} />
-            ) : null}
-          </div>
-        </div>
-      )}
+  <div
+    className="fixed inset-0 bg-black bg-opacity-75 z-50 overflow-hidden touch-auto" 
+    onClick={() => setActiveSection(null)}
+  >
+    <div
+      className="h-full w-full overflow-y-auto overscroll-contain -webkit-overflow-scrolling-touch" // Added webkit touch scrolling
+      style={{ WebkitOverflowScrolling: 'touch' }} // Added for iOS momentum scrolling
+      onClick={e => e.stopPropagation()}
+    >
+      <div className="min-h-full"> {/* Added wrapper for better mobile scroll */}
+        {activeSection === 'experience' ? (
+          <ExperienceModal onClose={() => setActiveSection(null)} />
+        ) : activeSection === 'about' ? (
+          <AboutModal onClose={() => setActiveSection(null)} />
+        ) : activeSection === 'education' ? (
+          <EducationModal onClose={() => setActiveSection(null)} />
+        ) : activeSection === 'skills' ? (
+          <SkillsModal onClose={() => setActiveSection(null)} />
+        ) : null}
+      </div>
+    </div>
+  </div>
+)}
     </div>
   );
 };

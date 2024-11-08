@@ -1,4 +1,5 @@
 import PixelResumeLand from './components/PixelResumeLand'
+import './firebase';
 
 function App() {
   return (

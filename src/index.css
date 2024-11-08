@@ -14,6 +14,22 @@ html, body, #root {
   overflow: hidden;
 }
 
+@font-face {
+  font-family: 'HubotSans';
+  src: url('/fonts/HubotSans-Light.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'MonaSans';
+  src: url('/fonts/MonaSans-Black.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'GintoBlack';
+  src: url('/fonts/ABCGinto-Black.woff2') format('woff2');
+}
+
+
 
 @layer base {
   :root {

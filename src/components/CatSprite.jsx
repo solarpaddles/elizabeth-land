@@ -59,7 +59,7 @@ const CatSprite = ({ direction, isMoving, idle, style }) => {
                      whitespace-nowrap backdrop-blur-sm"
         >
           <div className="relative">
-            Hi! I'm Lui, walk me around town to visit each icon!
+           👋  Hi! I'm Lui! Ready to explore!
             <div className="absolute top-full left-1/2 -translate-x-1/2
                           w-0 h-0 border-8 border-transparent border-t-black/75" 
             />

@@ -50,7 +50,7 @@ const AboutModal = ({ onClose }) => {
   }, [onClose]);
 
   return (
-    <div className="fixed inset-4 bg-white rounded-2xl shadow-2xl overflow-hidden">
+    <div className="fixed inset-4 bg-white rounded-xl shadow-2xl overflow-hidden">
       {/* Modal header */}
       <div className="sticky top-0 z-10 bg-white/80 backdrop-blur-sm border-b border-gray-100 px-8 py-4 flex justify-between items-center">
         <div className="text-sm font-medium text-gray-400">About Me</div>
